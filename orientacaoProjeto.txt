@@ -1,0 +1,23 @@
+bcryptjs -> responsavel pela cryptocrafia 
+connect-flash -> responsavel pelas flash mesages
+cookie-parser e cookie-session -> responsavel por manter a sessao do usuario por meio de sessao, validação de autenticação.
+express-flash -> tambem responsavel por flash mesage
+express-session -> responsavel pela autenticação de uma forma mais simples pelo express
+session-file-store -> responsavel por persistir as sessoes em arquivos, que é um metodo mais facil
+
+
+Tecnologias do projeto
+
+npm install 
+bcryptjs 
+connect-flash 
+cookie-parser 
+cookie-session 
+express 
+express-handlebars
+express-flash 
+express-session 
+mysql2 
+sequelize 
+nodemon 
+session-file-store
