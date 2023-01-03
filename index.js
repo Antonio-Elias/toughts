@@ -9,6 +9,10 @@ const port = 3000;
 
 const conn = require('./db/conn');
 
+// Models
+const Tought = require('./models/Tougth');
+const User = require('./models/User');
+
 //template engine
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
@@ -40,7 +44,8 @@ app.use(
             secure: false,
             maxAge: 360000,
             expires: new Date(Date.now() + 360000),
-            httpOnly:true, // em produção com o certificado se usaria o https (SSL)
+            httpOnly:true, // em produção com o certificado se usaria o https (SSL), utilizado para que o js não consiga acessar o 
+            // Documet.cookie, mas não impede de que o js possa usar este recurso (na parte do cliente).
         },
     })
 );

@@ -9,15 +9,31 @@ session-file-store -> responsavel por persistir as sessoes em arquivos, que é u
 Tecnologias do projeto
 
 npm install 
-bcryptjs 
-connect-flash 
-cookie-parser 
-cookie-session 
-express 
-express-handlebars
-express-flash 
-express-session 
-mysql2 
-sequelize 
-nodemon 
-session-file-store
+bcryptjs ( Leitura da documentação: OK )
+connect-flash ( ( middleware ) Leitura da documentação: OK ) 
+cookie-parser ( ( middleware ) Leitura da documentação: OK ) 
+cookie-session ( ( middleware ) Leitura da documentação: OK ) 
+express ( Ja conhecida )
+express-handlebars (Ja conhecida)
+express-flash ( Leitura da documentação: OK )
+express-session ( Leitura da documentação: OK)
+mysql2 ( Ja conhecida )
+sequelize ( Ja conhecida )
+nodemon ( Ja conhecida ) 
+session-file-store ( Leitura da documentação: OK )
+
+
+
+/***************************//////*****************////****
+Ponto para estudo.                                         *
+relacionamento no sequelize.                               *
+/***************************/////******************////****
+
+
+Error: MySQL shutdown unexpectedly.
+This may be due to a blocked port, missing dependencies, 
+improper privileges, a crash, or a shutdown by another method.
+Press the Logs button to view error logs and check
+the Windows Event Viewer for more clues
+If you need more help, copy and post this
+entire log window on the forums
