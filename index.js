@@ -11,7 +11,7 @@ const conn = require('./db/conn');
 
 // Models
 const Tought = require('./models/Tougth');
-const User = require('./models/User');
+
 
 // Import Routes
 const toughtsRoutes = require('./routes/toughtsRoutes');
@@ -30,7 +30,7 @@ app.use(
     })
 );
 
-app.use(express.json);
+app.use(express.json());
 
 // public path
 app.use(express.static('public'));
