@@ -13,6 +13,12 @@ const conn = require('./db/conn');
 const Tought = require('./models/Tougth');
 const User = require('./models/User');
 
+// Import Routes
+const toughtsRoutes = require('./routes/toughtsRoutes');
+
+// Import Controller
+const ToughtController = require('./controllers/ToughtController');
+
 //template engine
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
@@ -54,6 +60,8 @@ app.use(
 // flash messages
 app.use(flash());
 
+
+
 // set session to res (A ideia aqui é passar os dados do ususario para o front end e se necessario pode ser utilizado o mesmo)
 app.use((req, res, next) => {
 
@@ -64,12 +72,16 @@ app.use((req, res, next) => {
     next();
 });
 
+// Routes
+app.use('/toughts', toughtsRoutes);
+app.get('/', ToughtController.showToughts);
+
 conn
     .sync()
     .then(
         ()=>{
             app.listen(port,()=>{
-                console.log(`Aplicação rodando: hhtp://localhost:${port}`);
+                console.log(`Aplicação rodando: http://localhost:${port}`);
             })
         }
     )
