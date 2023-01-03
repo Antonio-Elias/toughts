@@ -5,15 +5,15 @@ const db = require('../db/conn');
 const User = db.define('User',{
     nome: {
         type: DataTypes.STRING,
-        require: true,
+        allowNull: false,
     },
     email: {
         type: DataTypes.STRING,
-        require: true,
+        allowNull: false,
     },
     senha: {
         type: DataTypes.STRING,
-        require: true,
+        allowNull: false,
     }
 
 });
