@@ -82,7 +82,7 @@ conn
         ()=>{
             app.listen(port,()=>{
                 console.log(`Aplicação rodando: http://localhost:${port}`);
-            })
+            });
         }
     )
     .catch((err) => {

@@ -21,6 +21,7 @@ mysql2 ( Ja conhecida )
 sequelize ( Ja conhecida )
 nodemon ( Ja conhecida ) 
 session-file-store ( Leitura da documentação: OK )
+mysql ( Ja é conhecido )
 
 
 
