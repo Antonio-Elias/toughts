@@ -11,6 +11,7 @@
 :root{
     /* Cores primarias */
     --cl-primary : #f6982d;
+    --cl-primary-white: #fff;
     /*color do body*/
     --bg-body-color: #222;
     --cl-body:       #FFF;
@@ -78,7 +79,71 @@ footer {
     border-top: 1px solid var(--cl-primary);
 }
 
+/*FORM REGISTER*/
+
+.auth-container {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container h2 {
+    margin-bottom: 1em;
+    color: var(--cl-primary-white);
+    border-left: 4px solid var(--cl-primary);
+    padding: 0.3em;
+    width: 100px;
+}
+
+.auth-container a {
+    color: var(--cl-primary);
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.form-control input,
+.form-control textarea {
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid var(--cl-primary);
+}
+
+form input[type='submit'],
+.btn{
+    background-color: transparent;
+    color: var(--cl-primary);
+    border: 2px solid var(--cl-primary);
+    padding: 0.5em 1.2em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .5s;
+}
+
+form input[type='submit']:hover,
+.btn:hover {
+    background-color: var(--cl-primary);
+    color: var(--cl-primary-white);
+}
+
+
+/*  FOOTER */
+
 footer span {
     font-weight: bold;
     color: var(--cl-primary);
 }
+
