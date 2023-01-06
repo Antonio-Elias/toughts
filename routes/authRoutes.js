@@ -5,7 +5,7 @@ const AughtController = require('../controllers/AuthController');
 // Controller
 
 router.get('/login', AughtController.login);
-router.get('/register', AughtController.login);
+router.get('/register', AughtController.register);
 
 module.exports = router;
 
