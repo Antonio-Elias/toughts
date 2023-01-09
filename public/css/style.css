@@ -10,7 +10,7 @@
 /*VARIAVEIS */
 :root{
     /* Cores primarias */
-    --cl-primary : #f6982d;
+    --cl-primary:       #f6982d;
     --cl-primary-white: #fff;
     /*color do body*/
     --bg-body-color: #222;
@@ -20,6 +20,11 @@
     --bg-navbar:     #222;
     --cl-navbar:     #FFF;
     --bdc-navbar:    #f6982d;
+
+    /* messages */
+    --cl-flesh:      #004085;
+    --bg-flesh:      #cce5ff;
+    --cl-bd-flesh:   #b8daff;
 }
 /*BODY*/
 body {
@@ -70,13 +75,18 @@ body {
     padding: 2em;
 }
 
-/* FOOTER */
-footer {
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid var(--cl-primary);
+
+
+
+.container .message {
+    padding: 1em;
+    color: var(--cl-flesh);
+    background-color: var(--cl-bd-flesh);
+    border: 1px solid var(--cl-bd-flesh);
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto 2em;
+    max-width: 60%;
 }
 
 /*FORM REGISTER*/
@@ -140,7 +150,14 @@ form input[type='submit']:hover,
 }
 
 
-/*  FOOTER */
+/* FOOTER */
+footer {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--cl-primary);
+}
 
 footer span {
     font-weight: bold;
