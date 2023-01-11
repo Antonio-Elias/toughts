@@ -22,27 +22,25 @@ module.exports = class {
         // check if passwords match
 
         // try - catch
+       
         try {
             const passwordMatch = bcrypt.compareSync(password, user.password);
+            
+            if(!passwordMatch){
+                req.flash('message', 'Senha Invalida!');
+                res.render('auth/login');
+                return;
+            }
+            req.session.userid = user.id;
+    
+            req.flash('message' , 'Login efetuado com sucesso!');
+            req.session.save(() => {
+                //console.log('estou no save session');
+                res.redirect('/');
+            });
         } catch (error) {
             console.log(error);
         }
-        
-
-        if(!passwordMatch){
-            req.flash('message', 'Senha Invalida!');
-            res.render('auth/login');
-            return;
-        }
-        req.session.userid = user.id;
-
-        req.flash('message' , 'Login efetuado com sucesso!');
-        req.session.save(() => {
-            //console.log('estou no save session');
-            res.redirect('/');
-        });
-
-
     };
 
     static register(req, res ){
