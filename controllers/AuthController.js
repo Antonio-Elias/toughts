@@ -7,6 +7,44 @@ module.exports = class {
         res.render('auth/login');
     };
 
+    static async loginPost(req, res){
+        const { email, password } = req.body;
+    
+        // console.log(req.body);
+        //find user
+        const user = await User.findOne( { where:{ email:email } })
+
+        if(!user){
+            req.flash('message', 'Usuário não encontrado!');
+            res.render('auth/login');
+            return;
+        }
+        // check if passwords match
+
+        // try - catch
+        try {
+            const passwordMatch = bcrypt.compareSync(password, user.password);
+        } catch (error) {
+            console.log(error);
+        }
+        
+
+        if(!passwordMatch){
+            req.flash('message', 'Senha Invalida!');
+            res.render('auth/login');
+            return;
+        }
+        req.session.userid = user.id;
+
+        req.flash('message' , 'Login efetuado com sucesso!');
+        req.session.save(() => {
+            //console.log('estou no save session');
+            res.redirect('/');
+        });
+
+
+    };
+
     static register(req, res ){
         res.render('auth/register');
     };
@@ -42,11 +80,12 @@ module.exports = class {
 
         try {
             const createdUser = await User.create(user);
-             req.session.userid = createdUser.id;
+            req.session.userid = createdUser.id;
 
             req.flash('message' , 'Cadastro realizado com sucesso!');
 
             req.session.save(() => {
+                //console.log('estou no save session');
                 res.redirect('/');
             });
             
