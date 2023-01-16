@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 
 module.exports = class {
     static login(req, res){
+        //console.log(req.get('content-Type'));
         res.render('auth/login');
     };
 
@@ -20,19 +21,21 @@ module.exports = class {
             return;
         }
         // check if passwords match
-
-        // try - catch
        
         try {
             const passwordMatch = bcrypt.compareSync(password, user.password);
-            
+
             if(!passwordMatch){
                 req.flash('message', 'Senha Invalida!');
                 res.render('auth/login');
                 return;
             }
+            //console.log('antes de setar o user id do session', req.session);
             req.session.userid = user.id;
-    
+           //console.log('depois de setar o user id do session', req.session);
+           //console.log(req.session);
+
+
             req.flash('message' , 'Login efetuado com sucesso!');
             req.session.save(() => {
                 //console.log('estou no save session');
