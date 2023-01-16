@@ -3,7 +3,6 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const flash = require('express-flash');
-
 const app = express();
 const port = 3000;
 
@@ -24,7 +23,7 @@ const ToughtController = require('./controllers/ToughtController');
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
-//receber resposta do body
+//receber resposta do body como json
 app.use(
     express.urlencoded({
         extended:true
@@ -77,6 +76,7 @@ app.use((req, res, next) => {
 app.use('/toughts', toughtsRoutes);
 app.use('/', authRoutes);
 app.get('/', ToughtController.showToughts);
+
 
 conn
     //.sync( {force: true} )
