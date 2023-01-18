@@ -1,5 +1,6 @@
 # toughts
 
+Curso ministrado pelo Matheus Batisti
 Ola este projeto de estudo tem como o principal objetivo criar um sistema com o crud, validação de sessão, validação de login, filtros e ordenações de pensamentos.
 
 As demais tecnologias foram usado neste projeto;
