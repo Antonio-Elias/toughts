@@ -23,6 +23,7 @@ module.exports = class ToughtController {
                     }
                 },
                 order: [['createdAt', order]],
+                // para agrupar pode ser usado o group: [['campo','campo1']]
             }
         );
 
