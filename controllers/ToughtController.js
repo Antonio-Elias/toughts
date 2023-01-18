@@ -5,8 +5,16 @@ const User = require('../models/User');
 module.exports = class ToughtController {
 
     static async showToughts(req, res) {
-        // console.log('estou no Controler')
-        res.render('toughts/home');
+        
+        const toughtsData = await Tought.findAll(
+            {
+                include: User,
+            }
+        );
+        const toughts = toughtsData.map((result) => result.get({ plain: true}));
+        console.log(toughts);
+
+        res.render('toughts/home', { toughts });
     }
 
     static async dashboard(req, res) {

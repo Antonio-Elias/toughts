@@ -25,6 +25,9 @@
     --cl-flesh:      #004085;
     --bg-flesh:      #cce5ff;
     --cl-bd-flesh:   #b8daff;
+
+    /* borde*/
+    --bd-color:      #333;
 }
 /*BODY*/
 body {
@@ -198,6 +201,100 @@ form input[type='submit']:hover,
 }
 
 
+/* HOME */
+
+.home-header {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-header h1 {
+    margin-bottom: 1em;
+}
+
+.home-header span {
+    color: var(--cl-primary);
+}
+
+.home-header p,
+.home-header form {
+    margin-bottom: 1.2em;
+}
+
+.home-header input {
+    border: none;
+    border-bottom: 1px solid var(--cl-primary-white);
+    padding: 0.5em;
+    margin-right: 1em;
+}
+
+.home-header input[type='text'] {
+    width: 60%;
+}
+
+.home-header input::placeholder {
+    color: var(--cl-primary-white);
+}
+
+.order-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto 1em;
+}
+
+.order-container span {
+    font-weight: bold;
+    color: var(--cl-primary-white);
+}
+
+.order-container form {
+    margin: 0;
+}
+
+.order-container button {
+    margin: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.order-container button:hover,
+.order-container i:hover,
+.order-container a:hover{
+    color: var(--cl-primary);
+}
+
+.order-container button,
+.order-container i,
+.order-container a{
+    margin: 0 7px;
+}
+
+.order-container a{
+    color: var(--cl-primary-white);
+}
+
+.toughts-continer figure {
+    border-bottom: 1px solid var(--bd-color);
+    padding: 0.5em;
+    max-width: 50%;
+    margin: 0 auto 1em;
+}
+
+.toughts-continer blockquote {
+    font-style: italic;
+    font-size: 2em;
+    margin-bottom: .4em;
+}
+
+.toughts-continer span {
+    color: var(--cl-primary);
+}
+
 /* FOOTER */
 footer {
     height: 150px;
@@ -231,7 +328,13 @@ footer span {
 
 .tought-form-container form{
     max-width: 30%;
-    margin-top: 1.5em;
+    margin-top: 1.5em solid var(--bd-color);
+}
+
+.tought-form-container blockquote {
+    font-style: italic;
+    font-size: 2em;
+    margin-bottom: 4em;
 }
 
 
